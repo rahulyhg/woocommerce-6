@@ -1,0 +1,150 @@
+{
+  "name": "Woocommerce",
+  "app_id": "woocommerce",
+  "color": "#03363d",
+  "description": {
+    "pt_BR": "A família de produtos Woocommerce ajuda a melhorar os relacionamentos com clientes e funcionários em empresas de todos os tamanhos.",
+    "en": "The Woocommerce family of products work together to help you improve customer relationships."
+	},
+  "website": "https://www.woocommerce.com.br",
+  "signup_url": "https://www.woocommerce.com.br/register",
+  "api_base_uri": {
+    "production": {
+			"uri": "{site}/wp-json/wc/v2",
+			"label": "Produção",
+			"default": true
+		}
+  },
+  "authentication": {
+    "type": "basic_auth",
+    "basic_auth_format": "{username}:{password}",
+    "fields": [
+      {
+        "name": "site",
+        "label": "Site",
+        "type": "text"
+      },
+      {
+        "name": "consumer_key",
+        "label": "Consumer Key",
+        "mapping": "username",
+        "type": "text"
+      },
+      {
+        "name": "consumer_secret",
+        "label": "Consumer Secret",
+        "mapping": "password",
+        "type": "text"
+      }
+    ],
+    "tutorial": {
+      "link": {
+        "pt_BR": "Onde encontrar o token da API do Woocommerce?",
+        "en": "Where to find Woocommerce API token?"
+      },
+      "steps": [
+        {
+          "title": {
+            "pt_BR": "Passo 1",
+            "en": "Step 1"
+          },
+          "content": {
+            "pt_BR": "O subdomínio é somente o nome anterior ao .woocommerce.com, ou seja, não inclua no campo o .woocommerce.com.",
+            "en": "O subdomínio é somente o nome anterior ao .woocommerce.com, ou seja, não inclua no campo o .woocommerce.com."
+          },
+          "img_url": {
+            "pt_BR": "https://manage.pluga.co/images/token-steps/woocommerce/step1.png",
+            "en": "https://manage.pluga.co/images/token-steps/woocommerce/step1.png"
+          }
+        },
+        {
+          "title": {
+            "pt_BR": "Passo 2",
+            "en": "Step 2"
+          },
+          "content": {
+            "pt_BR": "Acesse <a href='https://www.woocommerce.com/login/' target='_blank'>a página de login do Woocommerce</a> e entre com seu login e senha, caso ainda não esteja logado.",
+            "en": "Access <a href='https://www.woocommerce.com/login/' target='_blank'>woocommerce.com</a> and log in using your username and password if you haven’t already done so."
+          },
+          "img_url": {
+            "pt_BR": "https://manage.pluga.co/images/token-steps/woocommerce/step2.png",
+            "en": "https://manage.pluga.co/images/token-steps/woocommerce/step2.png"
+          }
+        },
+        {
+          "title": {
+            "pt_BR": "Passo 3",
+            "en": "Step 3"
+          },
+          "content": {
+            "pt_BR": "No menu lateral no canto esquerdo, clique em <strong>ADMIN</strong>.",
+            "en": "At left side menu, click in ADMIN."
+          },
+          "img_url": {
+            "pt_BR": "https://manage.pluga.co/images/token-steps/woocommerce/step3.png",
+            "en": "https://manage.pluga.co/images/token-steps/woocommerce/step3.png"
+          }
+        },
+        {
+          "title": {
+            "pt_BR": "Passo 4",
+            "en": "Step 4"
+          },
+          "content": {
+            "pt_BR": "Agora no submenu de <strong>CANAIS</strong>, clique em <strong>API</strong>.",
+            "en": "In Channel submenu, click on API."
+          },
+          "img_url": {
+            "pt_BR": "https://manage.pluga.co/images/token-steps/woocommerce/step4.png",
+            "en": "https://manage.pluga.co/images/token-steps/woocommerce/step4.png"
+          }
+        },
+        {
+          "title": {
+            "pt_BR": "Passo 5",
+            "en": "Step 5"
+          },
+          "content": {
+            "pt_BR": "Nesta tela de API do Woocommerce, garanta que o <strong>Acesso por token</strong> esteja ativado.",
+            "en": "Guarantee that Token Access is activated."
+          },
+          "img_url": {
+            "pt_BR": "https://manage.pluga.co/images/token-steps/woocommerce/step5.png",
+            "en": "https://manage.pluga.co/images/token-steps/woocommerce/step5.png"
+          }
+        },
+        {
+          "title": {
+            "pt_BR": "Passo 6",
+            "en": "Step 6"
+          },
+          "content": {
+            "pt_BR": "Perfeito, uma vez ativado, na área de Tokens da API ativos, clique no botão de <strong>+</strong> para criar um Token para o uso na Pluga.",
+            "en": "Perfect, once activated, in API Token active area, click on + button to create your token to use it on Pluga."
+          },
+          "img_url": {
+            "pt_BR": "https://manage.pluga.co/images/token-steps/woocommerce/step6.png",
+            "en": "https://manage.pluga.co/images/token-steps/woocommerce/step6.png"
+          }
+        },
+        {
+          "title": {
+            "pt_BR": "Passo 7",
+            "en": "Step 7"
+          },
+          "content": {
+            "pt_BR": "Ao clicar, aparecerá uma área para <strong>Criar um novo token</strong>. Para concluir, bastam 3 pequenos passos, o 1º que é opcional, é <strong>nomear o novo Token</strong> (no caso nomeamos como Pluga), o 2º é <strong>copiar o Token para colar na Pluga</strong> e o 3º mas não menos importante, <strong>SALVAR a criação do Token.</strong> Pronto! Agora é só seguir com sua automatização. ;)",
+            "en": "Name your new token, copy to paste it on Pluga and Save, that’s it! Now you can continue with your automation. ;)"
+          },
+          "img_url": {
+            "pt_BR": "https://manage.pluga.co/images/token-steps/woocommerce/step7.png",
+            "en": "https://manage.pluga.co/images/token-steps/woocommerce/step7.png"
+          }
+        }
+      ]
+    },
+    "ping_request": {
+    	"method_name": "/webhooks"
+  	}
+  }
+}
