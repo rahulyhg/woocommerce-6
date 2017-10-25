@@ -13,116 +13,116 @@
     "fields":[
       {
         "key":"id",
-        "name":"id",
+        "name":"ID",
         "description":"ID.",
         "field_type":"string"
       },
       {
         "key":"status",
-        "name":"status",
+        "name":"Status",
         "description":"Status.",
         "field_type":"string"
       },
       {
         "key":"currency",
-        "name":"currency",
+        "name":"Moeda",
         "description":"Moeda.",
         "field_type":"string"
       },
       {
         "key":"discount_total",
-        "name":"disconto",
+        "name":"Disconto",
         "description":"Disconto.",
         "field_type":"decimal"
       },
       {
         "key":"shipping_total",
-        "name":"frete",
+        "name":"Frete",
         "description":"Frete.",
         "field_type":"decimal"
       },
       {
         "key":"total_tax",
-        "name":"taxa",
+        "name":"Taxa",
         "description":"Taxa.",
         "field_type":"decimal"
       },
       {
         "key":"total",
-        "name":"total",
+        "name":"Total",
         "description":"Total.",
         "field_type":"decimal"
       },
       {
         "key":"date_created",
-        "name":"data/hora",
+        "name":"Data/Hora",
         "description":"Data/Hora.",
         "field_type":"date_time"
       },
       {
         "key":"customer_id",
-        "name":"id do cliente",
+        "name":"ID do Cliente",
         "description":"ID do cliente.",
         "field_type":"integer"
       },
       {
         "key":"payment_method_title",
-        "name":"método de pagamento",
+        "name":"Método de Pagamento",
         "description":"Método de pagamento.",
         "field_type":"string"
       },
       {
         "key":"line_items.name",
-        "name":"nomes dos itens",
+        "name":"Nomes dos Itens",
         "source":"source[:line_items].map{|i|i[:name]}.join(%q(, ))",
-        "description":"Nomes de todos os itens",
+        "description":"Nomes dos itens",
         "field_type":"string"
       },
       {
         "key":"billing.email",
-        "name":"email de cobrança",
+        "name":"Email de Cobrança",
         "description":"Email de cobrança.",
         "field_type":"string"
       },
       {
         "key":"billing.first_name",
-        "name":"nome de cobrança",
+        "name":"Nome de Cobrança",
         "description":"Nome de cobrança.",
         "field_type":"string"
       },
       {
         "key":"billing.phone",
-        "name":"telefone de cobrança",
+        "name":"Telefone de Cobrança",
         "description":"Telefone de cobrança.",
         "field_type":"string"
       },
       {
         "key":"billing.address_1",
-        "name":"endereço de cobrança",
+        "name":"Endereço de Cobrança",
         "description":"Endereço de cobrança.",
         "field_type":"string"
       },
       {
         "key":"billing.city",
-        "name":"cidade de cobrança",
+        "name":"Cidade de Cobrança",
         "description":"Cidade de cobrança.",
         "field_type":"string"
       },
       {
         "key":"billing.state",
-        "name":"estado de cobrança",
+        "name":"Estado de Cobrança",
         "description":"Estado de cobrança.",
         "field_type":"string"
       },
       {
         "key":"billing.country",
-        "name":"país de cobrança",
+        "name":"País de Cobrança",
         "description":"País de cobrança.",
         "field_type":"string"
       },
       {
         "key":"billing.postcode",
-        "name":"cep de cobrança",
+        "name":"CEP de Cobrança",
         "description":"CEP de cobrança.",
         "field_type":"string"
       }
@@ -132,17 +132,21 @@
   "webhook":{
     "message_type":"object",
     "rest_hook_config":{
-      "create":{
-        "verb":"POST",
-        "method_name":"/webhooks",
-        "params":{
+      "create": {
+        "verb": "POST",
+        "method_name": "/webhooks",
+        "params": {
           "name": "Order created",
-          "topic":"order.created",
+          "topic": "order.created",
+          "secret": ""
         }
       },
       "delete":{
         "verb":"DELETE",
-        "method_name":"/webhooks/{id}"
+        "method_name":"/webhooks/{id}",
+        "params":{
+          "force": "true"
+        }
       },
       "meta_params":{
         "webhook_id":"id",
@@ -150,14 +154,11 @@
       }
     },
     "event_filter":{
-      "field":"topic",
-      "events":["order.created"]
+      "field":"status",
+      "events":["pending", "processing", "on-hold"]
     },
     "idempotent":[
       {"type":"body", "field":"id"}
-    ],
-    "additional_resources":[
-      {"name":"id", "method":"/orders/"}
     ]
   }
 }
