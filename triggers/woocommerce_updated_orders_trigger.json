@@ -155,7 +155,7 @@
     },
     "event_filter": {
       "field": "status",
-      "events": ["processing", "completed", "cancelled", "refunded", "failed"]
+      "events": ["completed", "cancelled", "refunded", "failed"]
     },
     "idempotent":[
       {"type":"body", "field":"id"},
