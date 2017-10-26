@@ -1,0 +1,164 @@
+{
+  "name":{
+    "pt_BR":"Pedido criado",
+    "en":"Order created"
+  },
+  "trigger_key":"created_orders",
+  "description":{
+    "pt_BR":"Quando um pedido for criado.",
+    "en":"When a order is created."
+  },
+  "trigger_fields":{
+    "type":"local",
+    "fields":[
+      {
+        "key":"id",
+        "name":"ID",
+        "description":"ID.",
+        "field_type":"string"
+      },
+      {
+        "key":"status",
+        "name":"Status",
+        "description":"Status.",
+        "field_type":"string"
+      },
+      {
+        "key":"currency",
+        "name":"Moeda",
+        "description":"Moeda.",
+        "field_type":"string"
+      },
+      {
+        "key":"discount_total",
+        "name":"Disconto",
+        "description":"Disconto.",
+        "field_type":"decimal"
+      },
+      {
+        "key":"shipping_total",
+        "name":"Frete",
+        "description":"Frete.",
+        "field_type":"decimal"
+      },
+      {
+        "key":"total_tax",
+        "name":"Taxa",
+        "description":"Taxa.",
+        "field_type":"decimal"
+      },
+      {
+        "key":"total",
+        "name":"Total",
+        "description":"Total.",
+        "field_type":"decimal"
+      },
+      {
+        "key":"date_modified",
+        "name":"Data/Hora",
+        "description":"Data/Hora.",
+        "field_type":"date_time"
+      },
+      {
+        "key":"customer_id",
+        "name":"ID do Cliente",
+        "description":"ID do cliente.",
+        "field_type":"integer"
+      },
+      {
+        "key":"payment_method_title",
+        "name":"Método de Pagamento",
+        "description":"Método de pagamento.",
+        "field_type":"string"
+      },
+      {
+        "key":"line_items.name",
+        "name":"Nomes dos Itens",
+        "source":"source[:line_items].map{|i|i[:name]}.join(%q(, ))",
+        "description":"Nomes dos itens",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.email",
+        "name":"Email de Cobrança",
+        "description":"Email de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.first_name",
+        "name":"Nome de Cobrança",
+        "description":"Nome de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.phone",
+        "name":"Telefone de Cobrança",
+        "description":"Telefone de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.address_1",
+        "name":"Endereço de Cobrança",
+        "description":"Endereço de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.city",
+        "name":"Cidade de Cobrança",
+        "description":"Cidade de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.state",
+        "name":"Estado de Cobrança",
+        "description":"Estado de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.country",
+        "name":"País de Cobrança",
+        "description":"País de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.postcode",
+        "name":"CEP de Cobrança",
+        "description":"CEP de cobrança.",
+        "field_type":"string"
+      }
+    ]
+  },
+  "trigger_type":"rest_hook",
+  "webhook":{
+    "message_type":"object",
+    "rest_hook_config":{
+      "create": {
+        "verb": "POST",
+        "method_name": "/webhooks",
+        "params": {
+          "name": "Order created",
+          "topic": "order.created",
+          "secret": ""
+        }
+      },
+      "delete":{
+        "verb":"DELETE",
+        "method_name":"/webhooks/{id}",
+        "params":{
+          "force": "true"
+        }
+      },
+      "meta_params":{
+        "webhook_id":"id",
+        "webhook_url":"delivery_url"
+      }
+    },
+    "event_filter": {
+      "field": "status",
+      "events": ["pending", "on-hold"]
+    },
+    "idempotent":[
+      {"type":"body", "field":"id"}
+    ]
+  }
+}

@@ -17,7 +17,6 @@
   },
   "authentication": {
     "type": "basic_auth",
-    "basic_auth_format": "{username}:{password}",
     "fields": [
       {
         "name": "site",
