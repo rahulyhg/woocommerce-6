@@ -1,12 +1,12 @@
 {
   "name":{
-    "pt_BR":"Pedido criado",
-    "en":"Order created"
+    "pt_BR":"Pedido atualizado",
+    "en":"Order updated"
   },
-  "trigger_key":"orders_createds",
+  "trigger_key":"updated_orders",
   "description":{
-    "pt_BR":"Quando um pedido for criado.",
-    "en":"When a order is created."
+    "pt_BR":"Quando um pedido for atualizado.",
+    "en":"When a order is updated."
   },
   "trigger_fields":{
     "type":"local",
@@ -54,7 +54,7 @@
         "field_type":"decimal"
       },
       {
-        "key":"date_created",
+        "key":"date_modified",
         "name":"Data/Hora",
         "description":"Data/Hora.",
         "field_type":"date_time"
@@ -136,8 +136,8 @@
         "verb": "POST",
         "method_name": "/webhooks",
         "params": {
-          "name": "Order created",
-          "topic": "order.created",
+          "name": "Order updated",
+          "topic": "order.updated",
           "secret": ""
         }
       },
@@ -153,12 +153,13 @@
         "webhook_url":"delivery_url"
       }
     },
-    "event_filter":{
-      "field":"status",
-      "events":["pending", "processing", "on-hold"]
+    "event_filter": {
+      "field": "status",
+      "events": ["processing", "completed", "cancelled", "refunded", "failed"]
     },
     "idempotent":[
-      {"type":"body", "field":"id"}
+      {"type":"body", "field":"id"},
+      {"type":"body", "field":"status"}
     ]
   }
 }
