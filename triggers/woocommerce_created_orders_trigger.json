@@ -125,6 +125,36 @@
         "name":"CEP de Cobrança",
         "description":"CEP de cobrança.",
         "field_type":"string"
+      },
+      {
+        "key":"billing.number",
+        "name":"Nº de Cobrança",
+        "description":"Nº de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.neighborhood",
+        "name":"Bairro de Cobrança",
+        "description":"Bairro de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.persontype",
+        "name":"Tipo Pessoa de Cobrança",
+        "description":"Tipo pessoa de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.cpf",
+        "name":"CPF de Cobrança",
+        "description":"CPF de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.cnpj",
+        "name":"CNPJ de Cobrança",
+        "description":"CNPJ de cobrança.",
+        "field_type":"string"
       }
     ]
   },
