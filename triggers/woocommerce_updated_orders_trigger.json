@@ -54,6 +54,13 @@
         "field_type":"decimal"
       },
       {
+        "key":"total_text",
+        "name":"Total em Reais (texto)",
+        "source":"format_currency(source[:total])",
+        "description":"Valor total do pedido em Reais. Ex: R$ 42,00",
+        "field_type":"string"
+      },
+      {
         "key":"date_created",
         "name":"Data/Hora Criado",
         "description":"Data/Hora criado.",
