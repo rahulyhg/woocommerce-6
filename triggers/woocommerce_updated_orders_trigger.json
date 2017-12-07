@@ -99,8 +99,17 @@
       {
         "key":"line_items.name",
         "name":"Nomes dos Itens",
-        "source":"source[:line_items].map{|i|i[:name]}.join(%q(, ))",
         "description":"Nomes dos itens",
+        "source":"source[:line_items].map{|i|i[:name]}.join(%q(, ))",
+        "force_source": true,
+        "field_type":"string"
+      },
+      {
+        "key":"line_items.product_and_variation_ids",
+        "name":"IDs dos produtos com variação",
+        "description":"Lista dos itens no formato PRODUTO-VARIAÇÃO. Ex: 12-34, 56-78.",
+        "source":"source[:line_items].map{|i|%Q(#{i[:product_id]}-#{i[:variation_id]})}.join(%q(, ))",
+        "force_source": true,
         "field_type":"string"
       },
       {
