@@ -97,6 +97,20 @@
         "field_type":"string"
       },
       {
+        "key":"line_items.sku",
+        "name":"Skus dos Itens",
+        "source":"source[:line_items].map{|i|i[:sku]}.join(%q(, ))",
+        "description":"Skus dos itens",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping_lines.method_title",
+        "name":"Títulos de Entrega",
+        "source":"source[:shipping_lines].map{|i|i[:method_title]}.join(%q(, ))",
+        "description":"Títulos de entrega",
+        "field_type":"string"
+      },
+      {
         "key":"billing.email",
         "name":"Email de Cobrança",
         "description":"Email de cobrança.",
@@ -109,6 +123,12 @@
         "field_type":"string"
       },
       {
+        "key":"billing.last_name",
+        "name":"Sobrenome de Cobrança",
+        "description":"Sobrenome de cobrança.",
+        "field_type":"string"
+      },
+      {
         "key":"billing.phone",
         "name":"Telefone de Cobrança",
         "description":"Telefone de cobrança.",
@@ -118,6 +138,12 @@
         "key":"billing.address_1",
         "name":"Endereço de Cobrança",
         "description":"Endereço de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"billing.address_2",
+        "name":"Complemento de Cobrança",
+        "description":"Complemento de cobrança.",
         "field_type":"string"
       },
       {
@@ -172,6 +198,96 @@
         "key":"billing.cnpj",
         "name":"CNPJ de Cobrança",
         "description":"CNPJ de cobrança.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.email",
+        "name":"Email de Entrega",
+        "description":"Email de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.first_name",
+        "name":"Nome de Entrega",
+        "description":"Nome de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.last_name",
+        "name":"Sobrenome de Entrega",
+        "description":"Sobrenome de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.phone",
+        "name":"Telefone de Entrega",
+        "description":"Telefone de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.address_1",
+        "name":"Endereço de Entrega",
+        "description":"Endereço de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.address_2",
+        "name":"Complemento de Entrega",
+        "description":"Complemento de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.city",
+        "name":"Cidade de Entrega",
+        "description":"Cidade de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.state",
+        "name":"Estado de Entrega",
+        "description":"Estado de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.country",
+        "name":"País de Entrega",
+        "description":"País de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.postcode",
+        "name":"CEP de Entrega",
+        "description":"CEP de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.number",
+        "name":"Nº de Entrega",
+        "description":"Nº de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.neighborhood",
+        "name":"Bairro de Entrega",
+        "description":"Bairro de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.persontype",
+        "name":"Tipo Pessoa de Entrega",
+        "description":"Tipo pessoa de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.cpf",
+        "name":"CPF de Entrega",
+        "description":"CPF de entrega.",
+        "field_type":"string"
+      },
+      {
+        "key":"shipping.cnpj",
+        "name":"CNPJ de Entrega",
+        "description":"CNPJ de entrega.",
         "field_type":"string"
       }
     ]
