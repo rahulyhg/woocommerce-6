@@ -90,9 +90,18 @@
         "field_type":"string"
       },
       {
+        "key":"line_items",
+        "name":"Itens",
+        "source":"source[:line_items].map{|i|i.extract(:id,:name,:quantity,:sku)}",
+        "force_source": true,
+        "description":"Nomes dos itens",
+        "field_type":"array"
+      },
+      {
         "key":"line_items.name",
         "name":"Nomes dos Itens",
         "source":"source[:line_items].map{|i|i[:name]}.join(%q(, ))",
+        "force_source": true,
         "description":"Nomes dos itens",
         "field_type":"string"
       },
@@ -100,6 +109,7 @@
         "key":"line_items.sku",
         "name":"Skus dos Itens",
         "source":"source[:line_items].map{|i|i[:sku]}.join(%q(, ))",
+        "force_source": true,
         "description":"Skus dos itens",
         "field_type":"string"
       },
@@ -107,6 +117,7 @@
         "key":"shipping_lines.method_title",
         "name":"Títulos de Entrega",
         "source":"source[:shipping_lines].map{|i|i[:method_title]}.join(%q(, ))",
+        "force_source": true,
         "description":"Títulos de entrega",
         "field_type":"string"
       },
