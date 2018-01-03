@@ -72,27 +72,11 @@
         "field_type":"string"
       },
       {
-        "key":"line_items",
-        "name":"Itens",
-        "source":"source[:line_items].map{|i|i.extract(:id,:name,:quantity,:sku)}",
-        "force_source": true,
-        "description":"Itens",
-        "field_type":"array"
-      },
-      {
         "key":"line_items.name",
         "name":"Nomes dos Itens",
         "source":"source[:line_items].map{|i|i[:name]}.join(%q(, ))",
         "force_source": true,
         "description":"Nomes dos itens",
-        "field_type":"string"
-      },
-      {
-        "key":"line_items.sku",
-        "name":"Skus dos Itens",
-        "source":"source[:line_items].map{|i|i[:sku]}.join(%q(, ))",
-        "force_source": true,
-        "description":"Skus dos itens",
         "field_type":"string"
       },
       {
