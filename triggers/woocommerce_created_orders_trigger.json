@@ -54,6 +54,13 @@
         "field_type":"decimal"
       },
       {
+        "key":"total_text",
+        "name":"Total em Reais (texto)",
+        "source":"format_currency(source[:total])",
+        "description":"Valor total do pedido em Reais. Ex: R$ 42,00",
+        "field_type":"string"
+      },
+      {
         "key":"date_modified",
         "name":"Data/Hora",
         "description":"Data/Hora.",
@@ -74,9 +81,17 @@
       {
         "key":"line_items.name",
         "name":"Nomes dos Itens",
+        "description":"Nomes dos itens",
         "source":"source[:line_items].map{|i|i[:name]}.join(%q(, ))",
         "force_source": true,
-        "description":"Nomes dos itens",
+        "field_type":"string"
+      },
+      {
+        "key":"line_items.product_and_variation_ids",
+        "name":"IDs dos produtos com variação",
+        "description":"Lista dos itens no formato PRODUTO-VARIAÇÃO. Ex: 12-34, 56-78.",
+        "source":"source[:line_items].map{|i|%Q(#{i[:product_id]}-#{i[:variation_id]})}.join(%q(, ))",
+        "force_source": true,
         "field_type":"string"
       },
       {
