@@ -274,7 +274,9 @@
         "key":"shipping.number",
         "name":"Nº de Entrega",
         "description":"Nº de entrega.",
-        "field_type":"string"
+        "field_type":"string",
+        "source":"(s=source[:shipping])[:number]||s[:address_2]",
+        "force_source":true
       },
       {
         "key":"shipping.neighborhood",
