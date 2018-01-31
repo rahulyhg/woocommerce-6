@@ -3,8 +3,8 @@
   "app_id": "woocommerce",
   "color": "#03363d",
   "description": {
-    "pt_BR": "A família de produtos Woocommerce ajuda a melhorar os relacionamentos com clientes e funcionários em empresas de todos os tamanhos.",
-    "en": "The Woocommerce family of products work together to help you improve customer relationships."
+    "pt_BR": "WooCommerce é uma funcionalidade do WordPress que transforma seu site numa loja online completa.",
+    "en": ""
 	},
   "website": "https://www.woocommerce.com.br",
   "signup_url": "https://www.woocommerce.com.br/register",
