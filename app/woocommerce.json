@@ -20,7 +20,7 @@
     "fields": [
       {
         "name": "site",
-        "label": "Site",
+        "label": "Site Completo (https://seusite...)",
         "type": "text"
       },
       {
