@@ -16,7 +16,7 @@
 		}
   },
   "authentication": {
-    "type": "basic_auth",
+    "type": "pass_through_query_string",
     "fields": [
       {
         "name": "site",
@@ -26,13 +26,11 @@
       {
         "name": "consumer_key",
         "label": "Consumer Key",
-        "mapping": "username",
         "type": "text"
       },
       {
         "name": "consumer_secret",
         "label": "Consumer Secret",
-        "mapping": "password",
         "type": "text"
       }
     ],
