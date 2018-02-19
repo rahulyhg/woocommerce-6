@@ -310,7 +310,7 @@
     "rest_hook_config":{
       "create": {
         "verb": "POST",
-        "method_name": "/webhooks",
+        "method_name": "/webhooks?consumer_key={consumer_key}&consumer_secret={consumer_secret}",
         "params": {
           "name": "Order updated",
           "topic": "order.updated",
@@ -319,7 +319,7 @@
       },
       "delete":{
         "verb":"DELETE",
-        "method_name":"/webhooks/{id}",
+        "method_name":"/webhooks/{id}?consumer_key={consumer_key}&consumer_secret={consumer_secret}",
         "params":{
           "force": "true"
         }
