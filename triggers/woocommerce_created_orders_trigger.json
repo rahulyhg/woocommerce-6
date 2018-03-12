@@ -171,6 +171,14 @@
         "name":"CNPJ de Cobrança",
         "description":"CNPJ de cobrança.",
         "field_type":"string"
+      },
+      {
+        "key":"coupon_lines.code",
+        "name":"Cupons",
+        "description":"Cupons aplicados na compra.",
+        "source":"source[:coupon_lines].map{|c|c[:code]}.join(%(, ))",
+        "force_source":true,
+        "field_type":"string"
       }
     ]
   },
