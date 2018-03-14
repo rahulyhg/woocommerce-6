@@ -31,8 +31,8 @@
       },
       {
         "key":"discount_total",
-        "name":"Disconto",
-        "description":"Disconto.",
+        "name":"Desconto",
+        "description":"Desconto.",
         "field_type":"decimal"
       },
       {
