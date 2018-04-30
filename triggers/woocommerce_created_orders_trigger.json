@@ -144,8 +144,8 @@
       },
       {
         "key":"billing.number",
-        "name":"Nº de Cobrança",
-        "description":"Nº de cobrança.",
+        "name":"Número de Cobrança",
+        "description":"Número de cobrança.",
         "field_type":"string"
       },
       {

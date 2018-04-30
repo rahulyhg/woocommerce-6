@@ -182,8 +182,8 @@
       },
       {
         "key":"billing.number",
-        "name":"Nº de Cobrança",
-        "description":"Nº de cobrança.",
+        "name":"Número de Cobrança",
+        "description":"Número de cobrança.",
         "field_type":"string"
       },
       {
@@ -272,8 +272,8 @@
       },
       {
         "key":"shipping.number",
-        "name":"Nº de Entrega",
-        "description":"Nº de entrega.",
+        "name":"Número de Entrega",
+        "description":"Número de entrega.",
         "field_type":"string",
         "source":"(s=source[:shipping])[:number]||s[:address_2]",
         "force_source":true
