@@ -342,8 +342,7 @@
       "events": ["processing", "completed", "cancelled", "refunded", "failed"]
     },
     "idempotent":[
-      {"type":"body", "field":"id"},
-      {"type":"body", "field":"status"}
+      {"type":"body", "field":"id"}
     ]
   }
 }
