@@ -312,6 +312,24 @@
       }
     ]
   },
+  "trigger_custom_fields": {
+    "strategy": "fields_as_resource",
+    "request": {
+      "method_name": "/orders",
+      "params": { "per_page": 1 },
+      "json_api": true,
+      "response_field": 0
+    },
+    "conditions": [[ 
+      {"field": "data[:meta_data][0].to_h.keys.to_s", "condition": "equal", "value": "[:id, :key, :value]", "custom": true}
+    ]],
+    "mapping": {
+      "key": "{{key}}",
+      "name": "{{key}}",
+      "description": "{{key}}",
+      "field_type": "string"
+    }
+  },
   "trigger_type":"rest_hook",
   "webhook":{
     "message_type":"object",
