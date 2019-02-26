@@ -325,7 +325,8 @@
       "key": "meta_data.{{key}}",
       "name": "{{key}}",
       "description": "{{key}}",
-      "field_type": "string"
+      "field_type": "string",
+      "source": "source[:meta_data].find{|f|f[:key]==%q({{key}})}.try{|f|f[:value]}"
     }
   },
   "trigger_type":"rest_hook",
